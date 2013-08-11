@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Chef - Receitas para toda família</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/prettyPhoto/css/prettyPhoto.css">
+        <link rel="stylesheet" href="assets/css/flexslider.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/bootstrap-tagmanager.css">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+        <div class="container">
+            <div class="header row">
+                <div class="span12">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                            <h1>
+                                <a class="brand" href="index.html">Chef Logo</a>
+                            </h1>
+							<div class="formBusca">
+								<form class="nav pull-center navbar-form" action="">
+									<input type="text" placeholder="Procurar receita...">
+								</form>
+							</div>
+                            <div class="nav-collapse collapse">
+                                <ul class="nav pull-right">
+                                    <li>
+                                        <a href="index.html"><i class="icon-home"></i><br />Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="doces.html"><i class="icon-heart"></i><br />Doces</a>
+                                    </li>
+                                    <li>
+                                        <a href="salgados.html"><i class="icon-fire"></i><br />Salgados</a>
+                                    </li>
+                                    <li>
+                                        <a href="tags.html"><i class="icon-tags"></i><br />TAGS</a>
+                                    </li>
+									<li>
+                                        <a href="#loginModal" data-toggle="modal"><i class="icon-user"></i><br />Login</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Title -->
+        <div class="page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <i class="icon-plus page-title-icon"></i>
+                        <h2>Receita /</h2>
+                        <p>Cadastro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+		
+        <!-- Contact Us -->
+        <div class="contact-us container">
+            <div class="row">
+                <div class="contact-form span7">
+                    <p>Faça o cadastro da sua receita e não deixe de preencher a <a href="#fotodecapa">Nota do Chef</a> e incluir uma <a href="#fotodecapa">Foto de Capa</a>!</p>
+                  			  
+					<form method="post">
+                        <label for="receita">Receita</label>
+                        <input id="receita" type="text" name="receita" placeholder="Nome da receita">
+
+						<label for="resumo">Resumo</label>
+                        <input id="resumo" type="text" name="resumo" placeholder="Digite o resumo aqui..."></input>
+						
+						<label for="tags">TAGS</label>
+						<div class="space-nicely">
+							<input id="tags" name="tags" autocomplete="off" type="text" data-provide="typeahead" 
+							name="tags" placeholder="Tags separadas por [,] [tab] [enter]" 
+							class="input-medium tm-input tm-input-warning"/>
+						</div>
+
+						<label for="ingredientes">Ingredientes</label>
+                        <textarea id="ingredientes" name="ingredientes" placeholder="Listar os ingredientes aqui..."></textarea>
+						
+						<label for="preparo">Modo de preparo</label>
+                        <textarea id="preparo" name="preparo" placeholder="Descreva o modo de preparo aqui..."></textarea>
+                        
+						<label for="obs">Observações</label>
+                        <textarea id="obs" name="obs" placeholder="Observações aqui..."></textarea>
+                        
+						<button type="submit"><i class="icon-plus"></i> Cadastrar</button>
+                    </form>
+                </div>
+                <div class="contact-address span5" id="fotodecapa">
+                    <h4>Foto de Capa</h4>
+					<p>Dimensão: <b>725 x 348</b> pixels</p>
+                    <div class="fotocapa">
+						<a href="#novaTagModal" data-toggle="modal">Clique aqui para incluir uma foto de capa</a>
+					</div>
+					<p>
+						<label id="notadochef" for="nota">Nota do Chef</label>
+						<input id="nota" type="text" name="nota" class="span1">
+					</p>
+				</div>
+            </div>
+        </div>
+		
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="widget span3">
+                        <h4>Ver mais recentes</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    </div>
+                    <div class="widget span3">
+                        <h4>Ver por Nota</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    </div>
+                    <div class="widget span3">
+                        <h4>Ver destaques</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    </div>
+                    <div class="widget span3">
+                        <h4>Contato</h4>
+                        <p><i class="icon-envelope-alt"></i> Email: <a href="">contato@cchef.com</a></p>
+						<div class="social">
+							<a class="facebook" href=""></a>
+							<a class="twitter" href=""></a>
+						</div>
+                    </div>
+                </div>
+                <div class="footer-border"></div>
+                <div class="row">
+                    <div class="copyright span4">
+                        <p>Copyright 2013 Chef - All rights reserved.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+
+		<!-- loginModal -->
+		<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+			<h3 id="myModalLabel">Autenticação</h3>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="inputEmail">E-mail</label>
+						<div class="controls">
+							<input type="text" id="inputEmail" placeholder="usuario@dominio.com">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputPassword">Senha</label>
+						<div class="controls">
+							<input type="password" id="inputPassword" placeholder="****">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">			
+				<div class="ca-button span4">
+					<a href="#"><i class="icon-arrow-right"></i> Quero fazer parte!</a>
+				</div>
+				<button class="btn btn-warning">Entrar</button>
+			</div>
+		</div>
+				
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.8.2.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.flexslider.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script src="assets/js/jquery.ui.map.min.js"></script>
+        <script src="assets/js/jquery.quicksand.js"></script>
+        <script src="assets/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+        <script src="assets/js/scripts.js"></script>
+		<script src="assets/js/bootstrap-tagmanager.js"></script>
+
+		<script>
+		  jQuery(".tm-input:eq(0)").tagsManager({
+			prefilled: [""],
+			typeahead: true,
+			typeaheadAjaxSource: null,
+			typeaheadSource: ["Bolo", "Chocolate", "Lasanha", "Bolinho", "Creme", "Sobremesa", "Sopa", "Caldo", "Pizza"],
+			blinkBGColor_1: '#FFFF9C',
+			blinkBGColor_2: '#CDE69C',
+			hiddenTagListName: 'hiddenTagListA'
+		  });
+	</script>
+
+    </body>
+
+</html>
+
