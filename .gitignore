@@ -2,3 +2,4 @@
 /.openshift
 /target
 /chef.iml
+/deployments
