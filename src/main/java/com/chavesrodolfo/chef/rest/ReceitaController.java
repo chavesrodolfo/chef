@@ -43,5 +43,10 @@ public class ReceitaController {
     void atualizarReceita(@RequestBody Receita receita) {
     	receitaService.atualizarReceita(receita);
     }
+
+    @RequestMapping("/layout")
+    public String getlayoutHome() {
+        return "receita/layout";
+    }
     
 }
