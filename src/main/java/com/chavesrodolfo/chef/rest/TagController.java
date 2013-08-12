@@ -24,7 +24,7 @@ public class TagController {
         return tagService.listarTags();
     }
 
-    @RequestMapping(value = "/criarTag/{tag}", method = RequestMethod.POST)
+    @RequestMapping(value = "/cria/{tag}", method = RequestMethod.POST)
     public @ResponseBody
     void criarTag(@PathVariable("tag") Tag tag) {
         tagService.criarTag(tag);

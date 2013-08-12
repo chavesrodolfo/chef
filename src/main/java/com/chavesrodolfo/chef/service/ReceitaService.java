@@ -26,7 +26,7 @@ public class ReceitaService {
         receita.setIngredientes("1. lista de ingredientes FAKE");
         receita.setModoPreparo("Modo de preparo FAKE");
         receita.setNotaChef(8L);
-        receita.setObservacoes("Observacoe3s FAKE");
+        receita.setObservacoes("Observacoes FAKE");
         receita.setResumo("Resumo FAKE");
 
         Tag tagA = new Tag();
@@ -46,5 +46,33 @@ public class ReceitaService {
     public List<Receita> listarReceitas(){
         return receitas;
     }
+    
+    public void adicionarReceita(Receita receita) {
+    	receitas.add(receita);
+    }
+
+	public void removerReceita(Long id) {
+		Receita receita = buscarReceita(id);
+        if (receita != null) {
+            receitas.remove(receita);
+        }
+	}
+	
+	public void atualizarReceita(Receita receita) {
+		Receita receitaLocalizada = buscarReceita(receita.getId());
+		if (receitaLocalizada != null) {
+			receitas.remove(receitaLocalizada);
+			receitas.add(receita);
+		}
+	}
+	
+	private Receita buscarReceita(Long id) {
+		for (Receita receita : receitas) {
+			if (receita.getId() == id) {
+				return receita;
+			}
+		}
+		return null;
+	}
 
 }

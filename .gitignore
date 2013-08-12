@@ -2,3 +2,6 @@
 /.openshift
 /target
 /chef.iml
+/.classpath
+/.project
+/.settings
