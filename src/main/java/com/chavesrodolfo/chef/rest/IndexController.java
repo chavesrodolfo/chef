@@ -4,11 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("home")
-public class HomeController {
+@RequestMapping("/")
+public class IndexController {
 
-    @RequestMapping("/layout")
-    public String getlayoutHome() {
-        return "home/layout";
+    @RequestMapping
+    public String getlayoutIndex() {
+        return "index";
     }
+
 }

@@ -1,2 +1,26 @@
-
-<button class="btn btn-danger"  ng-show="cars.length > 1" ng-click="removeAllCars()">Chef</button>
+﻿<!-- Sugestoes -->
+<div class="portfolio container">
+    <div class="portfolio-title">
+        <h3>Sugestões</h3>
+    </div>
+    <div class="icon-awesome">
+        <a href="#"><i class="icon-star"></i></a>
+        <a href="#"><i class="icon-thumbs-up"></i></a>
+        <a href="#"><i class="icon-random"></i></a>
+    </div>
+    <div class="row">
+        <div ng-repeat="receita in receitasHome">
+            <div class="work span3">
+                <a href="receita.html">
+                    <img src="resources/img/portfolio/work1.jpg" alt="">
+                </a>
+                <h4>{{ receita.nome }}</h4>
+                <p>{{ receita.resumo }}</p>
+                <div class="icon-awesome">
+                    <a href="resources/img/portfolio/work1.jpg" rel="prettyPhoto"><i class="icon-camera"></i></a>
+                    <a href="receita.html"><i class="icon-book"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

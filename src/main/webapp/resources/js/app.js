@@ -2,7 +2,7 @@
 
 var ChefApp = {};
 
-var App = angular.module('ChefApp', ['app.filters', 'app.services', 'app.directives']);
+var App = angular.module('ChefApp', ['ChefApp.filters', 'ChefApp.services', 'ChefApp.directives']);
 
 App.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/home', {
