@@ -45,7 +45,7 @@ public class ReceitaController {
     }
 
     @RequestMapping("/layout")
-    public String getlayoutHome() {
+    public String getlayoutReceita() {
         return "receita/layout";
     }
     

@@ -12,51 +12,61 @@ import java.util.List;
 public class ReceitaService {
 
     private static List<Receita> receitas = new ArrayList<Receita>();
+    private static final int CARACTERES_RESUMO = 140;
 
-    // FIXME INICIO MOCK
+    // FIXME INICIO MOCK -----------------------------------------------------------------------------------------------
     static {
-        Receita receita = new Receita();
-        receita.setId(1L);
-        receita.setNome("Macarrão à carbonara");
+        for (long i=1; i<5; i++){
+            Receita receita = new Receita();
+            receita.setId(i);
+            receita.setNome("Macarrão à carbonara");
 
-        Categoria categoria = new Categoria();
-        categoria.setId(1L);
-        categoria.setNome("Doces");
-        receita.setCategoria(categoria);
+            Categoria categoria = new Categoria();
+            categoria.setId(i);
+            categoria.setNome("Salgados");
+            receita.setCategoria(categoria);
 
-        receita.setIngredientes("bacon picado a gosto\n" +
-                "queijo ralado a gosto\n" +
-                "3 ovos\n" +
-                "sal, pimenta\n" +
-                "marrarrão de sua escolha, espaguete, fusili..\n" +
-                "creme de leite se quiser dar um toque diferente à receita");
-        receita.setModoPreparo("\n" +
-                "Fritar bem o bacon, até ficar crocante\n" +
-                "Pode-se adicionar salame picado\n" +
-                "Colocar o macarrão à cozinhar em água e sal\n" +
-                "no refratário onde será servido o macarrão, bater bem os ovos com um garfo os ovos crus, temperar com sal e pimenta à gosto, e juntar o queijo ralado, também a gosto\n" +
-                "Quando o macarrão estiver pronto, escorrer e colocar, bem quente, sobre a mistura de ovos, e misturar bem\n" +
-                "O calor da massa cozinha os ovos\n" +
-                "Colocar o molho de bacon e creme de leite, ainda quente, sobre o macarrão e servir");
-        receita.setNotaChef(8L);
-        receita.setObservacoes("Observacoes FAKE");
-        receita.setResumo("O molho a carbonara os ovos vão batido com um garfo junto com parmesão e se quiser um poco de creme de leite e colocar quando a massa está cozida,juntando" +
-                " o bacon frito com azeite mexer tudo ate ficar o molho bem encorpado. E buon appetito.");
+            receita.setIngredientes("bacon picado a gosto\n" +
+                    "queijo ralado a gosto\n" +
+                    "3 ovos\n" +
+                    "sal, pimenta\n" +
+                    "marrarrão de sua escolha, espaguete, fusili..\n" +
+                    "creme de leite se quiser dar um toque diferente à receita");
 
-        Tag tagA = new Tag();
-        tagA.setId(1L);
-        tagA.setNome("TAG A");
-        Tag tagB = new Tag();
-        tagB.setId(1L);
-        tagB.setNome("TAG B");
-        List<Tag> tags = new ArrayList<Tag>();
-        tags.add(tagA);
-        tags.add(tagB);
-        receita.setTags(tags);
+            receita.setModoPreparo("\n" +
+                    "Fritar bem o bacon, até ficar crocante\n" +
+                    "Pode-se adicionar salame picado\n" +
+                    "Colocar o macarrão à cozinhar em água e sal\n" +
+                    "no refratário onde será servido o macarrão, bater bem os ovos com um garfo os ovos crus, " +
+                    "temperar com sal e pimenta à gosto, e juntar o queijo ralado, também a gosto\n" +
+                    "Quando o macarrão estiver pronto, escorrer e colocar, bem quente, sobre a mistura de ovos, e misturar bem\n" +
+                    "O calor da massa cozinha os ovos\n" +
+                    "Colocar o molho de bacon e creme de leite, ainda quente, sobre o macarrão e servir");
+            receita.setNotaChef(8L);
+            receita.setObservacoes("Observacoes FAKE");
+            receita.setResumo(sintetizarString("O molho a carbonara os ovos vão batido com um garfo junto com parmesão " +
+                    "e se quiser um poco de creme de leite e colocar quando a massa está cozida,juntando" +
+                    " o bacon frito com azeite mexer tudo ate ficar o molho bem encorpado. E buon appetito.", CARACTERES_RESUMO));
 
-        receitas.add(receita);
+            Tag tagA = new Tag();
+            tagA.setId(i);
+            tagA.setNome("macarronada");
+            Tag tagB = new Tag();
+            tagB.setId(i+1);
+            tagB.setNome("molho branco");
+            List<Tag> tags = new ArrayList<Tag>();
+            tags.add(tagA);
+            tags.add(tagB);
+            receita.setTags(tags);
+
+            receitas.add(receita);
+        }
     }
-    // FIXME FIM MOCK
+    // FIXME FIM MOCK  -------------------------------------------------------------------------------------------------
+
+    private static String sintetizarString(String str, int caracteres){
+        return str.substring(0,caracteres).concat("...");
+    }
 
     public List<Receita> listarReceitas(){
         return receitas;

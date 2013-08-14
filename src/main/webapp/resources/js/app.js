@@ -10,5 +10,10 @@ App.config(['$routeProvider', function ($routeProvider) {
         controller: HomeController
     });
 
+    $routeProvider.when('/receita', {
+        templateUrl: 'receita/layout',
+        controller: ReceitaController
+    });
+
     $routeProvider.otherwise({redirectTo: '/home'});
 }]);
