@@ -10,8 +10,8 @@ App.config(['$routeProvider', function ($routeProvider) {
         controller: HomeController
     });
 
-    $routeProvider.when('/receita', {
-        templateUrl: 'receita/layout',
+    $routeProvider.when('/receitas', {
+        templateUrl: 'receitas/layout',
         controller: ReceitaController
     });
 
