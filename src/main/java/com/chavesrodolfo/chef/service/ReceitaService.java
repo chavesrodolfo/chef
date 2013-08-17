@@ -26,21 +26,21 @@ public class ReceitaService {
             categoria.setNome("Salgados");
             receita.setCategoria(categoria);
 
-            receita.setIngredientes("bacon picado a gosto\n" +
-                    "queijo ralado a gosto\n" +
-                    "3 ovos\n" +
-                    "sal, pimenta\n" +
-                    "marrarrão de sua escolha, espaguete, fusili..\n" +
+            receita.setIngredientes("bacon picado a gosto<br/>" +
+                    "queijo ralado a gosto<br/>" +
+                    "3 ovos<br/>" +
+                    "sal, pimenta<br/>" +
+                    "marrarrão de sua escolha, espaguete, fusili..<br/>" +
                     "creme de leite se quiser dar um toque diferente à receita");
 
-            receita.setModoPreparo("\n" +
-                    "Fritar bem o bacon, até ficar crocante\n" +
-                    "Pode-se adicionar salame picado\n" +
-                    "Colocar o macarrão à cozinhar em água e sal\n" +
+            receita.setModoPreparo("<br/>" +
+                    "Fritar bem o bacon, até ficar crocante<br/>" +
+                    "Pode-se adicionar salame picado<br/>" +
+                    "Colocar o macarrão à cozinhar em água e sal<br/>" +
                     "no refratário onde será servido o macarrão, bater bem os ovos com um garfo os ovos crus, " +
-                    "temperar com sal e pimenta à gosto, e juntar o queijo ralado, também a gosto\n" +
-                    "Quando o macarrão estiver pronto, escorrer e colocar, bem quente, sobre a mistura de ovos, e misturar bem\n" +
-                    "O calor da massa cozinha os ovos\n" +
+                    "temperar com sal e pimenta à gosto, e juntar o queijo ralado, também a gosto<br/>" +
+                    "Quando o macarrão estiver pronto, escorrer e colocar, bem quente, sobre a mistura de ovos, e misturar bem<br/>" +
+                    "O calor da massa cozinha os ovos<br/>" +
                     "Colocar o molho de bacon e creme de leite, ainda quente, sobre o macarrão e servir");
             receita.setNotaChef(8L);
             receita.setObservacoes("Observacoes FAKE");
@@ -54,9 +54,13 @@ public class ReceitaService {
             Tag tagB = new Tag();
             tagB.setId(i+1);
             tagB.setNome("molho branco");
+            Tag tagC = new Tag();
+            tagC.setId(i+1);
+            tagC.setNome("bacon");
             List<Tag> tags = new ArrayList<Tag>();
             tags.add(tagA);
             tags.add(tagB);
+            tags.add(tagC);
             receita.setTags(tags);
 
             receitas.add(receita);
@@ -82,7 +86,7 @@ public class ReceitaService {
             receitas.remove(receita);
         }
 	}
-	
+
 	public void atualizarReceita(Receita receita) {
 		Receita receitaLocalizada = buscarReceita(receita.getId());
 		if (receitaLocalizada != null) {
@@ -91,7 +95,7 @@ public class ReceitaService {
 		}
 	}
 	
-	private Receita buscarReceita(Long id) {
+	public Receita buscarReceita(Long id) {
 		for (Receita receita : receitas) {
 			if (receita.getId() == id) {
 				return receita;

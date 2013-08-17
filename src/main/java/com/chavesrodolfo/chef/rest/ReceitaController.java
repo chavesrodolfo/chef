@@ -31,7 +31,13 @@ public class ReceitaController {
     void adicionarReceita(@RequestBody Receita receita) {
         receitaService.adicionarReceita(receita);
     }
-    
+
+    @RequestMapping(value = "/receita/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    Receita buscarReceita(@PathVariable("id") Long id) {
+       return receitaService.buscarReceita(id);
+    }
+
     @RequestMapping(value = "/remove/{id}", method = RequestMethod.DELETE)
     public @ResponseBody 
     void removerReceita(@PathVariable("id") Long id) {

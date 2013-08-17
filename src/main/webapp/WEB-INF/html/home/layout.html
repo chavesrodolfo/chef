@@ -1,4 +1,10 @@
-﻿<!-- Sugestoes -->
+﻿<!-- Site Description -->
+<div class="presentation container">
+    <h2>Uma deliciosa coleção de <span class="violet">receitas</span> para toda família.</h2>
+    <p>Entre nesse time e também seja um <span class="violet">Chef</span>.</p>
+</div>
+
+<!-- Sugestoes -->
 <div class="portfolio container">
     <div class="portfolio-title">
         <h3>Sugestões</h3>
@@ -11,24 +17,18 @@
     <div class="row">
         <div ng-repeat="receita in receitasHome">
             <div class="work span3">
-                <a href="receita.html">
+                <a href="#/receitas">
                     <img src="resources/img/portfolio/work1.jpg" alt="">
                 </a>
                 <h4>{{ receita.nome }}</h4>
                 <p>{{ receita.resumo }}</p>
                 <div class="icon-awesome">
                     <a href="resources/img/portfolio/work1.jpg" rel="prettyPhoto"><i class="icon-camera"></i></a>
-                    <a href="receita.html"><i class="icon-book"></i></a>
+                    <a ng-click="carregarReceita(receita)" href="#/receitas"><i class="icon-book"></i></a>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- Site Description -->
-<div class="presentation container">
-    <h2>Uma deliciosa coleção de <span class="violet">receitas</span> para toda família.</h2>
-    <p>Entre nesse time e também seja um <span class="violet">Chef</span>.</p>
 </div>
 
 <div class="call-to-action container">
