@@ -50,9 +50,14 @@ public class ReceitaController {
     	receitaService.atualizarReceita(receita);
     }
 
-    @RequestMapping("/layout")
-    public String getlayoutReceita() {
-        return "receita/layout";
+    @RequestMapping("/visualizareceita")
+    public String visualizareceita() {
+        return "receita/visualizareceita";
+    }
+
+    @RequestMapping("/cadastroreceita")
+    public String cadastroreceita() {
+        return "receita/cadastroreceita";
     }
     
 }

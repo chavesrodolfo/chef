@@ -1,0 +1,72 @@
+﻿<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <i class="icon-plus page-title-icon"></i>
+                <h2>Receita /</h2>
+                <p>Cadastro</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-us container">
+    <div class="row">
+        <div class="contact-form span7">
+            <p>
+                Faça o cadastro da sua receita e não deixe de preencher a <a href="#/receitas/cadastroreceita/#fotodecapa">Nota do Chef</a>
+                e incluir uma <a href="#/receitas/cadastroreceita/#fotodecapa">Foto de Capa</a>!
+            </p>
+
+            <form method="post">
+                <label for="receita">Receita</label>
+                <input id="receita" type="text" name="receita" placeholder="Nome da receita" focus="true">
+
+                <label for="resumo">Resumo</label>
+                <input id="resumo" type="text" name="resumo" placeholder="Digite o resumo aqui..."></input>
+
+                <label for="tags">TAGS</label>
+                <div class="space-nicely">
+                    <input id="tags" name="tags" autocomplete="off" type="text" data-provide="typeahead"
+                           name="tags" placeholder="Tags separadas por [,] [tab] [enter]"
+                           class="input-medium tm-input tm-input-warning"/>
+                </div>
+
+                <label for="ingredientes">Ingredientes</label>
+                <textarea id="ingredientes" name="ingredientes" placeholder="Listar os ingredientes aqui..."></textarea>
+
+                <label for="preparo">Modo de preparo</label>
+                <textarea id="preparo" name="preparo" placeholder="Descreva o modo de preparo aqui..."></textarea>
+
+                <label for="obs">Observações</label>
+                <textarea id="obs" name="obs" placeholder="Observações aqui..."></textarea>
+
+                <button type="submit"><i class="icon-plus"></i> Cadastrar</button>
+            </form>
+        </div>
+        <div class="contact-address span5" id="fotodecapa">
+            <h4>Foto de Capa</h4>
+            <p>Dimensão: <b>725 x 348</b> pixels</p>
+            <div class="fotocapa">
+                <a href="#novaTagModal" data-toggle="modal">Clique aqui para incluir uma foto de capa</a>
+            </div>
+            <p>
+                <label id="notadochef" for="nota">Nota do Chef</label>
+                <input id="nota" type="text" name="nota" class="span1">
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery(".tm-input:eq(0)").tagsManager({
+        prefilled: [""],
+        typeahead: true,
+        typeaheadAjaxSource: null,
+        typeaheadSource: ["Bolo", "Chocolate", "Lasanha", "Bolinho", "Creme", "Sobremesa", "Sopa", "Caldo", "Pizza"],
+        blinkBGColor_1: '#FFFF9C',
+        blinkBGColor_2: '#CDE69C',
+        hiddenTagListName: 'hiddenTagListA'
+    });
+</script>
