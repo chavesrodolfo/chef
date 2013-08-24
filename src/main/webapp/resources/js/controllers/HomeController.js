@@ -1,6 +1,12 @@
 'use strict';
 
-var HomeController = function($scope, $http, receitaService) {
+var HomeController = function($scope, $http, $location, $anchorScroll, receitaService) {
+
+    $scope.scrollTo = function(id) {
+        $location.hash(id);
+        console.log($location.hash());
+        $anchorScroll();
+    };
 
     $scope.listarReceitasHome = function() {
         $http.get('receitas/receitas.json').success(function(receitas){

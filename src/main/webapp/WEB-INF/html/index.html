@@ -10,9 +10,7 @@
         <meta name="author" content="">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
+        <link rel="stylesheet" href="resources/css/fonts.css">
         <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="resources/prettyPhoto/css/prettyPhoto.css">
         <link rel="stylesheet" href="resources/css/flexslider.css">
@@ -28,9 +26,8 @@
     </head>
 
     <body>
-
-        <!-- Header -->
-        <div class="container">
+    <!-- Header -->
+        <div class="container" ng-controller="NavbarController">
             <div class="header row">
                 <div class="span12">
                     <div class="navbar">
@@ -64,7 +61,7 @@
                                         <a href="#/tags"><i class="icon-tags"></i><br />TAGS</a>
                                     </li>
 									<li>
-                                        <a href="#loginModal" data-toggle="modal"><i class="icon-user"></i><br />Login</a>
+                                        <a href="#" ng-click="openDialog()" data-toggle="modal"><i class="icon-user"></i><br />Login</a>
                                     </li>
                                 </ul>
                             </div>
@@ -143,45 +140,21 @@
             </div>
         </footer>
 
-		<!-- loginModal -->
-		<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-			<h3 id="myModalLabel">Autenticação</h3>
-			</div>
-			<div class="modal-body">
-				<form class="form-horizontal">
-					<div class="control-group">
-						<label class="control-label" for="inputEmail">E-mail</label>
-						<div class="controls">
-							<input type="text" id="inputEmail" placeholder="usuario@dominio.com">
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="inputPassword">Senha</label>
-						<div class="controls">
-							<input type="password" id="inputPassword" placeholder="****">
-						</div>
-					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-
-				<button class="btn btn-warning">Entrar</button>
-			</div>
-		</div>
-
         <!-- Javascript -->
 
         <script src="resources/bootstrap/js/bootstrap.min.js"></script>
         <script src="resources/js/lib/angular/angular.js"></script>
         <script src="resources/js/lib/angular/angular-strap.min.js"></script>
         <script src="resources/js/lib/angular/angular-cookies.min.js"></script>
+        <script src="resources/js/lib/angular-ui-bootstrap/ui-bootstrap-0.5.0.js"></script>
+        <script src="resources/js/lib/angular-ui-bootstrap/ui-bootstrap-tpls-0.5.0.js"></script>
 
         <script src="resources/js/app.js"></script>
         <script src="resources/js/controllers/HomeController.js"></script>
         <script src="resources/js/controllers/ReceitaController.js"></script>
         <script src="resources/js/controllers/TagController.js"></script>
+        <script src="resources/js/controllers/DialogController.js"></script>
+        <script src="resources/js/controllers/NavbarController.js"></script>
         <script src="resources/js/filters.js"></script>
         <script src="resources/js/directives.js"></script>
         <script src="resources/js/services.js"></script>
