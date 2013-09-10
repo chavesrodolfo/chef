@@ -1,8 +1,16 @@
 package com.chavesrodolfo.chef.model;
 
+
+import javax.persistence.*;
+
+@Entity
 public class Categoria {
 
+
+    @Id
+    @GeneratedValue
     private Long id;
+
     private String nome;
 
     public String getNome() {
