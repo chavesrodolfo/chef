@@ -1,9 +1,38 @@
 package com.chavesrodolfo.chef.model;
 
-public class Comentario {
-	private Long id;
-	private String email;
-	private String nome;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+@Entity
+@Table(name = "COMENTARIO")
+public class Comentario implements Serializable {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @NotNull
+    @NotEmpty
+    @Email
+    private String email;
+
+    @NotNull
+    @Size(min = 3, max = 25, message = "O nome deve conter entre 3 e 25 caracteres.")
+    @Pattern(regexp = "[^0-9]*", message = "O nome não deve conter números.")
+    private String nome;
+
+    @NotNull
+    @Size(min = 3, max = 255, message = "O comentário deve conter entre 3 e 255 caracteres.")
 	private String comentario;
 
 	public Long getId() {

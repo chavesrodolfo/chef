@@ -1,8 +1,30 @@
 package com.chavesrodolfo.chef.model;
 
-public class Usuario {
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+@Entity
+@Table(name = "USUARIO", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+public class Usuario implements Serializable {
+
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @NotNull
+    @NotEmpty
+    @Email
     private String email;
+
+    @NotNull
+    @Size(min = 3, max = 25, message = "A senha deve conter entre 3 e 25 caracteres.")
     private String senha;
 
     public Long getId() {

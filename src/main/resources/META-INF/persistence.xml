@@ -9,7 +9,7 @@
          can find it in the source at src/main/webapp/WEB-INF/chef-ds.xml -->
       <jta-data-source>java:jboss/datasources/ChefDS</jta-data-source>
       <properties>
-         <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+         <property name="hibernate.hbm2ddl.auto" value="update" /><!--create-drop-->
          <property name="hibernate.show_sql" value="false" />
       </properties>
    </persistence-unit>

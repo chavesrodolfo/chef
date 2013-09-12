@@ -6,7 +6,9 @@ import com.chavesrodolfo.chef.model.Tag;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ReceitaService {
@@ -57,7 +59,7 @@ public class ReceitaService {
             Tag tagC = new Tag();
             tagC.setId(i+1);
             tagC.setNome("bacon");
-            List<Tag> tags = new ArrayList<Tag>();
+            Set<Tag> tags = new HashSet<Tag>();
             tags.add(tagA);
             tags.add(tagB);
             tags.add(tagC);

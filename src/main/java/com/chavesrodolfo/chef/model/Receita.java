@@ -1,18 +1,55 @@
 package com.chavesrodolfo.chef.model;
 
-import java.util.List;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
+import java.util.Set;
 
-public class Receita {
+@SuppressWarnings("serial")
+@Entity
+@Table(name = "RECEITA")
+public class Receita implements Serializable {
 
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @NotNull
+    @Size(min = 3, max = 25, message = "O nome da receita deve conter entre 3 e 25 caracteres.")
     private String nome;
+
+    @NotNull
+    @Size(min = 3, max = 140, message = "O resumo deve conter entre 3 e 140 caracteres.")
     private String resumo;
-    private List<Tag> tags;
+
+    @ManyToMany
+    @JoinTable(name="RECEITA_TAG",
+            joinColumns=
+            @JoinColumn(name="ID_RECEITA", referencedColumnName="id"),
+            inverseJoinColumns=
+            @JoinColumn(name="ID_TAG", referencedColumnName="id")
+    )
+    private Set<Tag> tags;
+
+    @NotNull
+    @Size(min = 3, max = 5000, message = "Os ingredientes devem conter entre 3 e 5000 caracteres.")
     private String ingredientes;
+
+    @NotNull
+    @Size(min = 3, max = 5000, message = "O modo de preparo deve conter entre 3 e 5000 caracteres.")
     private String modoPreparo;
+
+    @NotNull
+    @Size(min = 3, max = 1000, message = "As observações devem conter entre 3 e 1000 caracteres.")
     private String observacoes;
+
     private Long notaChef;
+
     private Byte[] fotoCapa;
+
+    @OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    @JoinColumn(name = "ID_CATEGORIA", referencedColumnName = "id")
     private Categoria categoria;
 
     public Long getId() {
@@ -39,11 +76,11 @@ public class Receita {
         this.resumo = resumo;
     }
 
-    public List<Tag> getTags() {
+    public Set<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(Set<Tag> tags) {
         this.tags = tags;
     }
 
