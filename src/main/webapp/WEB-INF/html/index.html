@@ -27,7 +27,7 @@
 
     <body>
     <!-- Header -->
-        <div class="container" ng-controller="NavbarController">
+        <div class="container" data-ng-controller="NavbarController">
             <div class="header row">
                 <div class="span12">
                     <div class="navbar">
@@ -61,7 +61,7 @@
                                         <a href="#/tags"><i class="icon-tags"></i><br />TAGS</a>
                                     </li>
 									<li>
-                                        <a href="#" ng-click="openDialog()" data-toggle="modal"><i class="icon-user"></i><br />Login</a>
+                                        <a href="#" data-ng-click="openDialog()" data-toggle="modal"><i class="icon-user"></i><br />Login</a>
                                     </li>
                                 </ul>
                             </div>
@@ -103,7 +103,7 @@
         </div>
 		-->
 
-        <div ng-view></div>
+        <div data-ng-view></div>
 
         <!-- Footer -->
         <footer>

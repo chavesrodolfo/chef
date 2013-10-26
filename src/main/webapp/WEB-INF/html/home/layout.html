@@ -1,13 +1,13 @@
-Ôªø<!-- Site Description -->
+<!-- Site Description -->
 <div class="presentation container">
-    <h2>Uma deliciosa cole√ß√£o de <span class="violet">receitas</span> para toda fam√≠lia.</h2>
-    <p>Entre nesse time e tamb√©m seja um <span class="violet">Chef</span>.</p>
+    <h2>Uma deliciosa coleÁ„o de <span class="violet">receitas</span> para toda famÌlia.</h2>
+    <p>Entre nesse time e tambÈm seja um <span class="violet">Chef</span>.</p>
 </div>
 
 <!-- Sugestoes -->
 <div class="portfolio container">
     <div class="portfolio-title">
-        <h3>Sugest√µes</h3>
+        <h3>Sugestıes</h3>
     </div>
     <div class="icon-awesome">
         <a href="#"><i class="icon-star"></i></a>
@@ -15,16 +15,19 @@
         <a href="#"><i class="icon-random"></i></a>
     </div>
     <div class="row">
-        <div ng-repeat="receita in receitasHome">
-            <div class="work span3">
-                <a href="#/receitas">
+        <div data-ng-repeat="receita in receitasHome">
+            <div class="work span4">
+                <!-- <a data-ng-click="carregarReceita(receita)" href="#/receitas/visualizareceita">
                     <img src="resources/img/portfolio/work1.jpg" alt="">
+                </a> -->
+                <a data-ng-click="carregarReceita(receita)" href="#/receitas/visualizareceita">
+                	<h4 >{{ receita.nome }}</h4>
                 </a>
-                <h4>{{ receita.nome }}</h4>
-                <p>{{ receita.resumo }}</p>
+                	<p>{{ receita.resumo }}</p>
+                
                 <div class="icon-awesome">
-                    <a href="resources/img/portfolio/work1.jpg" rel="prettyPhoto"><i class="icon-camera"></i></a>
-                    <a ng-click="carregarReceita(receita)" href="#/receitas/visualizareceita"><i class="icon-book"></i></a>
+                    <!-- <a href="resources/img/portfolio/work1.jpg" rel="prettyPhoto"><i class="icon-camera"></i></a> 
+                    <a data-ng-click="carregarReceita(receita)" href="#/receitas/visualizareceita"><i class="icon-book"></i></a>-->
                 </div>
             </div>
         </div>
@@ -35,13 +38,13 @@
     <div class="row">
         <div class="call-to-action-text span12">
             <div class="ca-text span12">
-                <p>Cadastre mais uma  <span class="violet">del√≠cia</span> no cat√°logo e veja no Menu o que est√° esperando para ser preparado.</p>
+                <p>Cadastre mais uma  <span class="violet">delÌcia</span> no cat·logo e veja no Menu o que est· esperando para ser preparado.</p>
             </div>
             <div class="ca-button span4">
-                <a href="receitas-a-z.html"><i class="icon-book"></i> Receitas de A-Z</a>
+                <a href="#"><i class="icon-book"></i> Receitas de A-Z</a>
             </div>
             <div class="ca-button span4">
-                <a href="#/receitas/cadastroreceita"><i class="icon-plus"></i> Incluir receita</a>
+                <a href="#/receitas/cadastroreceita" data-ng-click="prepararNovaReceita()"><i class="icon-plus"></i> Incluir receita</a>
             </div>
         </div>
     </div>
@@ -50,7 +53,7 @@
 <!-- Testimonials -->
 <div class="testimonials container">
     <div class="testimonials-title">
-        <h3>Coment√°rios</h3>
+        <h3>Coment·rios</h3>
     </div>
     <div class="row">
         <div class="testimonial-list span12">

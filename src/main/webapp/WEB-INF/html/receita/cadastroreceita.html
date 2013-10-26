@@ -1,4 +1,4 @@
-Ôªø<div class="page-title">
+<div data-ng-init="obterReceitaEmEdicao()" class="page-title">
     <div class="container">
         <div class="row">
             <div class="span12">
@@ -10,50 +10,57 @@
     </div>
 </div>
 
-
 <div class="contact-us container">
     <div class="row">
         <div class="contact-form span7">
             <p>
-                Fa√ßa o cadastro da sua receita e n√£o deixe de preencher a <a ng-click="scrollTo('fotodecapa')">Nota do Chef</a>
-                e incluir uma <a ng-click="scrollTo('fotodecapa')">Foto de Capa</a>!
+                FaÁa o cadastro da sua receita e n„o deixe de preencher a <a data-ng-click="scrollTo('fotodecapa')">Nota do Chef</a>
+                e incluir uma <a data-ng-click="scrollTo('fotodecapa')">Foto de Capa</a>!
             </p>
 
             <form method="post">
                 <label for="receita">Receita</label>
-                <input id="receita" type="text" name="receita" placeholder="Nome da receita" focus="true">
+                <input id="receita" type="text" data-ng-model="receita.nome" name="receita" placeholder="Nome da receita" data-focus="true">
 
                 <label for="resumo">Resumo</label>
-                <input id="resumo" type="text" name="resumo" placeholder="Digite o resumo aqui..."></input>
+                <input id="resumo" type="text" data-ng-model="receita.resumo" name="resumo" placeholder="Digite o resumo aqui..."></input>
 
                 <label for="tags">TAGS</label>
                 <div class="space-nicely">
-                    <input id="tags" name="tags" autocomplete="off" type="text" data-provide="typeahead"
+                    <input id="tags" name="tags" data-ng-model="tags" autocomplete="off" type="text" data-provide="typeahead"
                            name="tags" placeholder="Tags separadas por [,] [tab] [enter]"
                            class="input-medium tm-input tm-input-warning"/>
                 </div>
 
                 <label for="ingredientes">Ingredientes</label>
-                <textarea id="ingredientes" name="ingredientes" placeholder="Listar os ingredientes aqui..."></textarea>
+                <textarea id="ingredientes" data-ng-model="receita.ingredientes" name="ingredientes" placeholder="Listar os ingredientes aqui..."></textarea>
 
                 <label for="preparo">Modo de preparo</label>
-                <textarea id="preparo" name="preparo" placeholder="Descreva o modo de preparo aqui..."></textarea>
+                <textarea id="preparo" data-ng-model="receita.modoPreparo" name="preparo" placeholder="Descreva o modo de preparo aqui..."></textarea>
 
-                <label for="obs">Observa√ß√µes</label>
-                <textarea id="obs" name="obs" placeholder="Observa√ß√µes aqui..."></textarea>
+                <label for="obs">ObservaÁıes</label>
+                <textarea id="obs" data-ng-model="receita.observacoes" name="obs" placeholder="ObservaÁıes aqui..."></textarea>
 
-                <button type="submit"><i class="icon-plus"></i> Cadastrar</button>
-            </form>
+			
+						<div class="call-to-action-text span12">
+							<div class="ca-button span10">
+								<a data-ng-click="cadastrarReceita()"
+									href="#/receitas/visualizareceita"><i class="icon-plus"></i>
+									Cadastrar</a>
+							</div>
+					
+				</div>
+			</form>
         </div>
         <div class="contact-address span5" id="fotodecapa">
             <h4>Foto de Capa</h4>
-            <p>Dimens√£o: <b>725 x 348</b> pixels</p>
+            <p>Dimens„o: <b>725 x 348</b> pixels</p>
             <div class="fotocapa">
                 <a href="#novaTagModal" data-toggle="modal">Clique aqui para incluir uma foto de capa</a>
             </div>
             <p>
                 <label id="notadochef" for="nota">Nota do Chef</label>
-                <input id="nota" type="text" name="nota" class="span1">
+                <input id="nota" data-ng-model="receita.notaChef" type="text" name="nota" class="span1">
             </p>
         </div>
     </div>

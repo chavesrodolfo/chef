@@ -10,7 +10,7 @@
         <driver>com.mysql</driver>
         <security>
             <user-name>root</user-name>
-            <password>root</password>
+            <password>admin</password>
         </security>
     </datasource>
 </datasources>

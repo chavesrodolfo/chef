@@ -1,4 +1,4 @@
-Ôªø<div class="page-title">
+<div data-ng-init="obterReceita()" class="page-title">
     <div class="container">
         <div class="row">
             <div class="span12">
@@ -23,8 +23,10 @@
             <p>{{receita.resumo}}</p>
             <p>
                 <br/>
-                <span ng-repeat="tag in receita.tags"><span class="label label-important">{{tag.nome}}</span> </span>
+                <span data-ng-repeat="tag in receita.tags"><span class="label label-important">{{tag.nome}}</span> </span>
             </p>
+            
+            <a href="#/receitas/cadastroreceita" data-ng-click="definirReceitaEmEdicao()"> <span class="label"><i class="icon-edit"></i> Editar</span></a>
         </div>
 
         <div class="about-us-text span8">
@@ -32,9 +34,9 @@
             <h4>Nota</h4>
             <p><span class="badge badge-important">{{receita.notaChef}}</span></p>
             <h4>Ingredientes</h4>
-            <p class="ng-binding" ng-bind-html-unsafe="receita.ingredientes"/>
+            <p class="data-ng-binding" data-ng-bind-html-unsafe="receita.ingredientes"/>
             <h4>Modo de preparo</h4>
-            <p class="ng-binding" ng-bind-html-unsafe="receita.modoPreparo"/>
+            <p class="data-ng-binding" data-ng-bind-html-unsafe="receita.modoPreparo"/>
         </div>
     </div>
 </div>
@@ -44,10 +46,10 @@
     <div class="row">
         <div class="span12">
 
-            <!-- Coment√°rios -->
+            <!-- Coment·rios -->
             <div class="testimonials container">
                 <div class="testimonials-title">
-                    <h3>Coment√°rios</h3>
+                    <h3>Coment·rios</h3>
                 </div>
                 <div class="row">
                     <div class="testimonial-list span12">

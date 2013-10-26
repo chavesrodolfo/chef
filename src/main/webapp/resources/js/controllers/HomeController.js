@@ -12,12 +12,16 @@ var HomeController = function($scope, $http, $location, $anchorScroll, receitaSe
         $http.get('receitas/receitas.json').success(function(receitas){
             $scope.receitasHome = receitas;
         });
-    }
+    };
+    
+    $scope.prepararNovaReceita = function() {
+    	receitaService.setReceitaEmEdicao(false);
+    };
 
     $scope.carregarReceita = function(receita) {
         receitaService.setReceita(receita);
-        console.log(receita.nome+":"+receita.id);
-    }
+        console.log("receita: "+receita.nome+" | id: "+receita.id);
+    };
 
     $scope.listarReceitasHome();
-}
+};
