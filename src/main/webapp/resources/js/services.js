@@ -10,19 +10,19 @@ AppServices.factory('receitaService', ['$cookieStore', function ($cookieStore) {
         
         return {
         	getReceita: function () {
-                console.log("getReceita");
+                console.log("receitaService>>getReceita: nome:" + $cookieStore.get('receitaSelecionada').nome + " id:" + $cookieStore.get('receitaSelecionada').id);
                 return $cookieStore.get('receitaSelecionada');
             },
             setReceita: function(receitaSelecionada) {
-                console.log("setReceita");
+                console.log("receitaService>>setReceita: nome:" + receitaSelecionada.nome + " id:" + receitaSelecionada.id);
                 $cookieStore.put('receitaSelecionada', receitaSelecionada);
             },
             getReceitaEmEdicao: function () {
-                console.log("getReceita em edicao:" + status);
+                console.log("receitaService>>getReceitaEmEdicao: " + $cookieStore.get('receitaEmEdicao'));
                 return $cookieStore.get('receitaEmEdicao');
             },
             setReceitaEmEdicao: function(status) {
-                console.log("setReceita em edicao:" + status);
+                console.log("receitaService>>setReceitaEmEdicao: " + status);
                 $cookieStore.put('receitaEmEdicao', status);
             },
 

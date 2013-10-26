@@ -20,7 +20,7 @@ var HomeController = function($scope, $http, $location, $anchorScroll, receitaSe
 
     $scope.carregarReceita = function(receita) {
         receitaService.setReceita(receita);
-        console.log("receita: "+receita.nome+" | id: "+receita.id);
+        console.log("HomeController>>carregarReceita nome:"+receita.nome+" id:"+receita.id);
     };
 
     $scope.listarReceitasHome();

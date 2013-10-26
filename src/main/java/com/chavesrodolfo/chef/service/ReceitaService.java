@@ -79,6 +79,9 @@ public class ReceitaService {
     }
     
     public void adicionarReceita(Receita receita) {
+    	receita.setIngredientes(receita.getIngredientes().replaceAll("\n", "<br/>"));
+    	receita.setModoPreparo(receita.getModoPreparo().replaceAll("\n", "<br/>"));
+    	receita.setObservacoes(receita.getObservacoes().replaceAll("\n", "<br/>"));
     	receitas.add(receita);
     }
 

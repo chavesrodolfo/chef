@@ -28,7 +28,7 @@
                 <label for="tags">TAGS</label>
                 <div class="space-nicely">
                     <input id="tags" name="tags" data-ng-model="tags" autocomplete="off" type="text" data-provide="typeahead"
-                           name="tags" placeholder="Tags separadas por [,] [tab] [enter]"
+                           name="tags" placeholder="Tags separadas por vírgula (,) e sem espaço"
                            class="input-medium tm-input tm-input-warning"/>
                 </div>
 
@@ -39,7 +39,10 @@
                 <textarea id="preparo" data-ng-model="receita.modoPreparo" name="preparo" placeholder="Descreva o modo de preparo aqui..."></textarea>
 
                 <label for="obs">Observações</label>
-                <textarea id="obs" data-ng-model="receita.observacoes" name="obs" placeholder="Observações aqui..."></textarea>
+                
+                <textarea id="obs" data-ng-model="receita.observacoes" name="obs" placeholder="Observações aqui...">
+                	{{receita.observacoes}}
+                </textarea>
 
 			
 						<div class="call-to-action-text span12">
@@ -66,7 +69,7 @@
     </div>
 </div>
 
-<script>
+<script type="text/javascript">
     jQuery(".tm-input:eq(0)").tagsManager({
         prefilled: [""],
         typeahead: true,
